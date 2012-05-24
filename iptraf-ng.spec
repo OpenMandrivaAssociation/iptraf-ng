@@ -1,7 +1,7 @@
 %define Werror_cflags %nil
 
 Name:           iptraf-ng
-Version:        1.1.0
+Version:        1.1.3.1
 Release:        1
 Summary:        TCP/IP Network Monitor
 License:        GPLv2
