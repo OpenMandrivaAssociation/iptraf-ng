@@ -11,7 +11,10 @@ Source0:	https://fedorahosted.org/releases/i/p/iptraf-ng/%{name}-%{version}.tar.
 BuildRequires:  automake
 BuildRequires:  ncurses-devel
 BuildRequires:  xz
+BuildRequires:  kernel-headers
+Patch0:		iptraf-ng-1.1.3.1-kernel-v3.5-kill-off-token-ring-support.patch
 Obsoletes:	iptraf
+
 
 %description
 IPTraf-ng is a console-based network statistics utility. It gathers a
@@ -21,6 +24,8 @@ breakdowns, and LAN station packet and byte counts.
 
 %prep
 %setup -q
+%patch0 -p1
+
 %build
 if [ ! -e configure ]; then
 	./autogen.sh;
