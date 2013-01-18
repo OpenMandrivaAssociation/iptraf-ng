@@ -30,6 +30,7 @@ breakdowns, and LAN station packet and byte counts.
 if [ ! -e configure ]; then
 	./autogen.sh;
 fi;
+sed -i 's/lpanel/lpanelw/g' Makefile
 %configure2_5x
 %make
 
