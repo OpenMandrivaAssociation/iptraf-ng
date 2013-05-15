@@ -1,20 +1,18 @@
 %define Werror_cflags %nil
 
+Summary:        TCP/IP Network Monitor
 Name:           iptraf-ng
 Version:        1.1.3.1
 Release:        1
-Summary:        TCP/IP Network Monitor
 License:        GPLv2
 Group:          System/Configuration/Networking
 Url:            https://fedorahosted.org/iptraf-ng
 Source0:	https://fedorahosted.org/releases/i/p/iptraf-ng/%{name}-%{version}.tar.gz
-BuildRequires:  automake
-BuildRequires:  ncurses-devel
+Patch0:		iptraf-ng-1.1.3.1-kernel-v3.5-kill-off-token-ring-support.patch
 BuildRequires:  xz
 BuildRequires:  kernel-headers
-Patch0:		iptraf-ng-1.1.3.1-kernel-v3.5-kill-off-token-ring-support.patch
+BuildRequires:  pkgconfig(ncurses)
 Obsoletes:	iptraf
-
 
 %description
 IPTraf-ng is a console-based network statistics utility. It gathers a
@@ -24,7 +22,7 @@ breakdowns, and LAN station packet and byte counts.
 
 %prep
 %setup -q
-%patch0 -p1
+%apply_patches
 
 %build
 if [ ! -e configure ]; then
@@ -39,6 +37,7 @@ sed -i 's/lpanel/lpanelw/g' Makefile
 install -d -m 0755 %{buildroot}/var/lib/iptraf-ng
 
 %files
-%_sbindir/*
-%_mandir/man*/*
+%{_sbindir}/*
+%{_mandir}/man*/*
 /var/lib/iptraf-ng
+
