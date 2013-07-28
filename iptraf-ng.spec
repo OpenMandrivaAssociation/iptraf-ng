@@ -2,13 +2,12 @@
 
 Summary:        TCP/IP Network Monitor
 Name:           iptraf-ng
-Version:        1.1.3.1
+Version:        1.1.4
 Release:        1
 License:        GPLv2
 Group:          System/Configuration/Networking
 Url:            https://fedorahosted.org/iptraf-ng
 Source0:	https://fedorahosted.org/releases/i/p/iptraf-ng/%{name}-%{version}.tar.gz
-Patch0:		iptraf-ng-1.1.3.1-kernel-v3.5-kill-off-token-ring-support.patch
 BuildRequires:  xz
 BuildRequires:  kernel-headers
 BuildRequires:  pkgconfig(ncurses)
