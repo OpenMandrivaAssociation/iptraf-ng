@@ -3,7 +3,7 @@
 Summary:        TCP/IP Network Monitor
 Name:           iptraf-ng
 Version:        1.1.4
-Release:        4
+Release:        5
 License:        GPLv2
 Group:          System/Configuration/Networking
 Url:            https://fedorahosted.org/iptraf-ng
