@@ -21,7 +21,7 @@ breakdowns, and LAN station packet and byte counts.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 if [ ! -e configure ]; then
