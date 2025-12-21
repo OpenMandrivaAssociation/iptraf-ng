@@ -8,6 +8,11 @@ License:        GPLv2
 Group:          System/Configuration/Networking
 Url:            https://fedorahosted.org/iptraf-ng
 Source0:	https://fedorahosted.org/releases/i/p/iptraf-ng/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  xz
 BuildRequires:  kernel-headers
 BuildRequires:  pkgconfig(ncurses)
